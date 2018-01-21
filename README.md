@@ -13,7 +13,7 @@ Testing is an important part of the development process and many organizations p
 
 ## How to run the unit tests
 
-Just open the file `index.html` inside the web browser or navigate to [online version of the webpage](https://mburazin.github.io/frontend-nanodegree-feedreader/) and the unit tests will run automatically. The test results will be shown at the bottom of the page in the _Jasmine_ section.
+Just open the file `index.html` inside the web browser and the unit tests will run automatically. The test results will be shown at the bottom of the page in the _Jasmine_ section.
 
 #### Attribution
 
