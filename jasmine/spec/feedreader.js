@@ -88,12 +88,11 @@ $(function() {
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          */
-         it('are loaded into the feed container', function(done) {
+         it('are loaded into the feed container', function() {
            var container = $('.feed');
            var entries = container.find('.entry');
            expect(entries).toBeDefined();
            expect(entries.length).toBeGreaterThan(0);
-           done();
          });
     });
 
@@ -101,9 +100,7 @@ $(function() {
 
         // load the feed with index 1 first
         beforeEach(function(done) {
-          loadFeed(1, function() {
-            done();
-          });
+          loadFeed(1, done);
         });
 
         /* A test that ensures when a new feed is loaded
@@ -116,7 +113,6 @@ $(function() {
            expect(oldEntries).toBeDefined();
            expect(oldEntries.length).toBeGreaterThan(0);
            
-           var oldEntry = oldEntries[0];
            // load another feed with index 0 and test if first entry 
            // in the container changed, i.e. new feed was loaded
            loadFeed(0, function() {
@@ -125,8 +121,8 @@ $(function() {
              expect(newEntries).toBeDefined();
              expect(newEntries.length).toBeGreaterThan(0);
              
-             var newEntry = newEntries[0];
-             expect(newEntry).not.toContain(oldEntry);
+             // html function will get the contents of first entry
+             expect(newEntries.html()).not.toEqual(oldEntries.html());
              done();
            });
          });
